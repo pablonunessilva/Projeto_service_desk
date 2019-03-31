@@ -5,7 +5,8 @@
 	$motivo = $_POST['motivo'];
 	$descricao = $_POST['descricao'];
     $idusuario = $_POST['idusuario'];
-    $numaquina = $_POST['numaquina'];
+    $prioridade=$_POST['prioridade'];
+
 
 // informações do banco para juntar com as informações do usuario passadas aqui em cima, e colocar na tabela chamados.
 	$query = "select setor, nome from usuario where idusuario = '$idusuario' limit 1";
@@ -18,7 +19,7 @@
 		$data = date("Y-m-d H:i:s");
     }
     
-	$query2 = "insert into chamados(idusuario, data, setorcall, solicitacao, descricao, problema, numaquina, status) values('$idusuario','$data','$setor','$nome','$descricao','$motivo','$numaquina','Pendente')";
+	$query2 = "insert into chamados(idusuario, data, setorcall, solicitacao, descricao, id_problema, status,id_prioridade) values('$idusuario','$data','$setor','$nome','$descricao','$motivo','Pendente','$prioridade')";
     mysqli_query($con, $query2);
     header("Location:homeusuario.php?msagen=right");
     

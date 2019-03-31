@@ -21,7 +21,7 @@
         $vez = $usuario['primeira_vez'];
     }
 
-    $query2 = "select idchamado, idusuario, data, setorcall, solicitacao, descricao, problema, numaquina, status from chamados where idusuario = '$id'";
+    $query2 = "select A.idchamado, A.data, A.setorcall, A.solicitacao, A.descricao, B.desc_problema, A.status,C.prioridade_desc,C.sla from chamados as A  LEFT JOIN tbl_problema as B ON A.id_problema = B.id_problema LEFT JOIN prioridade as C ON A.id_prioridade =C.id where idusuario = '$id'";
     $cons = mysqli_query($con, $query2);
     $total = mysqli_num_rows($cons);
     
@@ -50,14 +50,17 @@
                         echo "<table class='tab table table-hover'>
                                 <thead>
                                     <tr class='back'>
-                                        <th>Setor:</th>
-                                        <th>Nº da Máquina</th>
-                                        <th>Motivo:</th>
-                                        <th>Data:</th>
-                                        <th>Solicitação:</th>
-                                        <th>Status:</th>
-                                        <th>Visualizar:</th>
-                                    </tr>
+                                        <th>Setor</th>
+                                        <th>Quem solicitou</th>
+                                        <th>Problema</th>
+                                        <th>Descrição do Problema</th>
+                                        <th>Data da solicitação</th>
+                                        <th>Status</th>
+                                        <th>Prioridade</th>
+                                        <th>Tempo</th>
+                                        <th>Visualizar solicitacao:</th>
+                                        <th>Atualizar situação</th>
+                                </tr>
                                 </thead>";
                 ?>        
                 <?php  
@@ -65,12 +68,15 @@
                         $idchamado = $quero['idchamado'];
                         echo "<tbody>   
                                 <tr>
-                                    <td>" .$quero['setorcall']. "</td>
-                                    <td>" .$quero['numaquina']. "</td>
-                                    <td>" .$quero['problema']. "</td>
-                                    <td>" .$quero['data']. "</td>
-                                    <td>" .$quero['solicitacao']. "</td>
-                                    <td>" ?>
+                                <td>" .$quero['setorcall']. "</td>
+                                <td>".$quero['solicitacao']."</td>
+                                <td>".$quero['desc_problema']."</td>
+                                <td>".$quero['descricao']."</td>
+                                <td>" .$quero['data']. "</td>
+                                <td>" .$quero['status']. "</td>
+                                <td>" .$quero['prioridade_desc']. "</td>
+                                <td>" .$quero['sla']. "Hrs</td>
+                                <td>" ?>
                                         <?php if($quero['status'] == 'Pendente'){
                                             echo "<span style='color:red;'>Pendente</span>";
                                         ?>

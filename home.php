@@ -21,12 +21,12 @@
         $status = $_POST['status'];
         
         if($selecionar == "todos"){
-            $query = "select idchamado, data, setorcall, solicitacao, descricao, problema, numaquina, status from chamados where status = '$status' order by idchamado";
+            $query = "select A.idchamado, A.data, A.setorcall, A.solicitacao, A.descricao, B.desc_problema, A.status,C.prioridade_desc,C.sla from chamados as A  LEFT JOIN tbl_problema as B ON A.id_problema = B.id_problema LEFT JOIN prioridade as C ON A.id_prioridade =C.id  where status = '$status' order by idchamado";
         }else{
-            $query = "select idchamado, data, setorcall, solicitacao, descricao, problema, numaquina, status from chamados where setorcall = '$selecionar' and status = '$status' order by idchamado";
+            $query="select A.idchamado, A.data, A.setorcall, A.solicitacao, A.descricao, B.desc_problema, A.status,C.prioridade_desc,C.sla from chamados as A  LEFT JOIN tbl_problema as B ON A.id_problema = B.id_problema LEFT JOIN prioridade as C ON A.id_prioridade =C.id  where status = '$status' and setorcall='$selecionar' order by idchamado";
         }
         
-    }else{ $query = "select idchamado, data, setorcall, solicitacao, descricao, problema, numaquina, status from chamados where status = 'Pendente' order by idchamado"; }
+    }else{ $query = "select A.idchamado, A.data, A.setorcall, A.solicitacao, A.descricao, B.desc_problema, A.status,C.prioridade_desc,C.sla from chamados as A  LEFT JOIN tbl_problema as B ON A.id_problema = B.id_problema LEFT JOIN prioridade as C ON A.id_prioridade =C.id  where status = 'Pendente' order by idchamado"; }
     $cons = mysqli_query($con, $query);
     $total = mysqli_num_rows($cons);
 
@@ -43,13 +43,10 @@
                         <label style="color: black;" for="selecionar">Selecionar por:</label>
                         <select class="form-control" name="selecionar" id="selecionar" required>
                             <option value="todos">Todos</option>
-                            <option value="RH">Recursos Humanos</option>
+                        
                             <option value="administrativo">Administrativo</option>
                             <option value="admin_no_privilege">Administrativo(Sem Privilégios)</option>
-                            <option value="contabil">Contábil</option>
-                            <option value="operacao">Operação</option>
-                            <option value="seguranca do trabalho">Segurança do Trabalho</option>
-                            <option value="auxiliar servicos gerais">Auxiliar de Serviços Gerais..</option>
+                            
                         </select>
                         
                     </div>
@@ -72,13 +69,16 @@
                         echo "<table class='tab table table-hover'>
                                 <thead>
                                     <tr class='back'>
-                                        <th>Setor:</th>
-                                        <th>Nº da Máquina</th>
-                                        <th>Motivo:</th>
-                                        <th>Data:</th>
-                                        <th>Solicitação:</th>
-                                        <th>Status:</th>
-                                        <th>Visualizar:</th>
+                                        <th>Setor</th>
+                                        <th>Quem solicitou</th>
+                                        <th>Problema</th>
+                                        <th>Descrição do Problema</th>
+                                        <th>Data da solicitação</th>
+                                        <th>Status</th>
+                                        <th>Prioridade</th>
+                                        <th>Tempo</th>
+                                        <th>Visualizar solicitacao:</th>
+                                        <th>Atualizar situação</th>
                                     </tr>
                                 </thead>";
 
@@ -87,10 +87,13 @@
                             echo "<tbody>   
                                     <tr>
                                         <td>" .$quero['setorcall']. "</td>
-                                        <td>" .$quero['numaquina']. "</td>
-                                        <td>" .$quero['problema']. "</td>
+                                        <td>".$quero['solicitacao']."</td>
+                                        <td>".$quero['desc_problema']."</td>
+                                        <td>".$quero['descricao']."</td>
                                         <td>" .$quero['data']. "</td>
-                                        <td>" .$quero['solicitacao']. "</td>
+                                        <td>" .$quero['status']. "</td>
+                                        <td>" .$quero['prioridade_desc']. "</td>
+                                        <td>" .$quero['sla']. "Hrs</td>
                                         <td>" ?>
                                         
                             <?php if($quero['status'] == 'Pendente'){

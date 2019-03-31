@@ -59,13 +59,10 @@
                         <select name="setor" id="setor" class="form-control" required>
                                <option value="" readonly>Selecione:</option>
                                <option value="helpdesk">Técnico Help Desk</option>
-                               <option value="RH">Recursos Humanos</option>
                                <option value="administrativo">Administrativo</option>
                                <option value="admin_no_privilege">Administrativo(Sem Privilégios)</option>
-                               <option value="contabil">Contábil</option>
-                               <option value="operacao">Operação</option>
-                               <option value="seguranca do trabalho">Segurança do Trabalho</option>
-                               <option value="auxiliar servicos gerais">Auxiliar de Serviços Gerais</option>
+                               <option value="tecnicoInformatica">Tecnico Informática</option>
+                               <option value="cliente">Cliente</option>
                         </select>
                     </div>
                 </div>

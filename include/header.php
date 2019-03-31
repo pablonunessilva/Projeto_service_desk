@@ -7,10 +7,11 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/estilo.css">
     
-    <link rel="shortcut icon" href="img/logo.png" />
+    <link rel="shortcut icon" href="" />
     
     <script src="js/bootstrap.min.js"></script>
     <script src="js/myscript.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.js"></script>
 </head>
 <body >
 

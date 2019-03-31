@@ -36,7 +36,7 @@
 	<section >
         <div class="container <?php echo "$down"; ?> down ">
             <div class="col-xs-12 col-md-12">
-                <h3 class="ajust">Abrir chamado</h3>
+                <h3 class="ajust">Abrir Chamado</h3>
                 <div class="clearbit0"></div>
         <?php
                 if($total != 0){
@@ -100,39 +100,54 @@
                     echo "</table>";
                     echo "</div>";
                 }  ?>    
-                    <hr>  
-                      
-                <form action="chamado.php" method="post" name="chamado" id="chamado" oninput="ajustes(this)" >
-                    <div class="form-group text-center">
-                        <label for="numaquina">Código da Máquina:</label>
-                        <input class="form-control" type="text" id="numaquina" name="numaquina" placeholder="Digite o código do computador que está na etiqueta preso ao gabinete." onkeyup="salto(this.name,this.value)" onkeypress="masc_phone(this)" required>
-                    </div>
+                    <hr>
                     
-                    <div class="form-group text-center">
+            
+              
+                <form action="chamado.php" method="post" name="chamado" id="chamado" oninput="ajustes(this)" >
+            
+                    <div class="form-group col-md-4">
+                        <label for="classificacao">Prioridade</label>
+                        <select name="prioridade" id="prioridade" class="form-control" required>
+                            <option value="">Selecione</option>
+                            <option value="1">Critica</option>
+                            <option value="2">Alta</option>
+                            <option value="3">Média</option>
+                            <option value="4">Baixa</option>
+                        </select>
+                    </div>
+            
+            
+                    <div class="form-group col-md-4">
                         <label for="motivo" >Problema:</label>
                             <select name="motivo" id="motivo" class="form-control" required>
                                 <option value="">Selecione: </option>
-                                <option value="mouse" >Mouse com defeito</option>
-                                <option value="teclado" >Teclado com defeito </option>
-                                <option value="impressora" >Impressora com defeito </option>
-                                <option value="monitor">Monitor com defeito </option>
-                                <option value="computador" >Computador não liga </option>
-                                <option value="internet">Sem internet </option>
-                                <option value="outro">Outro.. </option>
+                                <option value="1" >Internet está muito lenta</option>
+                                <option value="2" >Não consigo abrir um site especifico</option>
+                                <option value="3" >Não abre nenhum site</option>
+                                <option value="4">Mudança de endereço</option>
+                                <option value="5" >Mudança do local da instalação </option>
+                                <option value="6">Outros</option>
                             </select>
                     </div>
 
-                    <div  class="form-group text-center">
+            
+            
+            
+                    <div  class="form-group col-md-12 ">
                         <label for="descricao">Descrição</label>
                         <textarea class="form-control" id="descricao" maxlength="300" name="descricao" placeholder="Descreva o problema aqui..." rows="5" id="comment"></textarea>
-                    </div>
+    
                    
                     <input type="submit" style="border: 1px solid black; margin-top: 10px;" class=" btn btn-default" name="">
-                    <input type='hidden' name="idusuario" value="<?php echo $id; ?>" ></input>
+                    <input type='hidden' name="idusuario" value="<?php echo $id; ?>" >
                    <input style="border: 1px solid black; margin-top: 10px;" class="btn btn-danger" type="reset">
                 </form>
             </div>
-        </div>
+            </div>
+            </div>
+    
+            
     </section>
 <div class="clear4"></div>
 
