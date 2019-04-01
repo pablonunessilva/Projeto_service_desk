@@ -35,38 +35,42 @@
 <div class="clear4"></div>
     <section class="overx" >
         <div class="container">
-            <div class="col-xs-12 col-md-12">
+        
                 <h3 class="ajust2">Chamados</h3>
               
                 <form action="" method="post" >
-                    <div class="setor form-group">
+                <div class="row">
+                    <div class="form-group col-md-4">
                         <label style="color: black;" for="selecionar">Selecionar por:</label>
                         <select class="form-control" name="selecionar" id="selecionar" required>
-                            <option value="todos">Todos</option>
-                        
-                            <option value="administrativo">Administrativo</option>
-                            <option value="admin_no_privilege">Administrativo(Sem Privilégios)</option>
+                               <option value="" readonly>Selecione:</option>
+                               <option value="helpdesk">Técnico Help Desk</option>
+                               <option value="administrativo">Administrativo</option>
+                               <option value="admin_no_privilege">Administrativo(Sem Privilégios)</option>
+                               <option value="tecnicoInformatica">Tecnico Informática</option>
+                               <option value="cliente">Cliente</option>
                             
                         </select>
                         
                     </div>
                     
-                    <div class="tipo form-group ">
-                        <label style="color: black;" for="status">Status:</label>
+                    <div class="form-group col-md-4">
+                        <label style="color: black;" for="status">Status</label>
                         <select class="form-control" name="status" id="status" required>
-                            <option value="">Selecione:</option>
+                            <option value="" readonly>Selecione:</option>
                             <option  style="color: red;" value="Pendente">Pendentes</option>
                             <option style="color: blue;" value="Resolvido">Resolvidos</option>
                         </select>
-                        <div class="form-control botao">
-                            <button class="btn btn-default pesq"> Pesquisar</button>
-                        </div>
                     </div>
+                    <div class="col-md-4">
+                        <button class="btn btn-primary"> Pesquisar</button>
+                    </div>
+                </div>
                 </form>
-                
-                <div class='table-responsive'>
+                <div class="col-xs-12">
+                <div class='table-responsive '>
                     <?php if($total != 0){
-                        echo "<table class='tab table table-hover'>
+                        echo "<table class='table table-hover'>
                                 <thead>
                                     <tr class='back'>
                                         <th>Setor</th>
@@ -76,7 +80,7 @@
                                         <th>Data da solicitação</th>
                                         <th>Status</th>
                                         <th>Prioridade</th>
-                                        <th>Tempo</th>
+                                        <th>Prazo</th>
                                         <th>Visualizar solicitacao:</th>
                                         <th>Atualizar situação</th>
                                     </tr>
@@ -90,10 +94,10 @@
                                         <td>".$quero['solicitacao']."</td>
                                         <td>".$quero['desc_problema']."</td>
                                         <td>".$quero['descricao']."</td>
-                                        <td>" .$quero['data']. "</td>
+                                        <td>" .date("d-m-Y H:i:s",strtotime($quero['data'])). "</td>
                                         <td>" .$quero['status']. "</td>
                                         <td>" .$quero['prioridade_desc']. "</td>
-                                        <td>" .$quero['sla']. "Hrs</td>
+                                        <td>" .date("d-m-Y H:i:s",strtotime($quero['data']." +".$quero['sla']."hour")). "</td>
                                         <td>" ?>
                                         
                             <?php if($quero['status'] == 'Pendente'){
@@ -130,7 +134,14 @@
                             echo "</table>";
 
                     }
+                    else{
+                        echo '<div class="alert alert-warning" role="alert">
+                                    <span>Nenhum registro encontrado</span>
+                              </div>';
+                    }
+                    
                     ?>
+                    
                 </div> 
             </div>
         </div>

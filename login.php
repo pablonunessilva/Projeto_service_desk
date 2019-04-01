@@ -17,7 +17,7 @@
         if($setor == "administrativo"){
             setcookie ("admin", "$login", (time() + (24 * 3600)));
             header("Location: home.php");
-        }else if($setor == "helpdesk"){
+        }else if($setor == "helpdesk" || $setor =="tecnicoInformatica"){
             setcookie ("tecnico", "$login", (time() +(24 * 3600)));
             header("Location: hometech.php");
         }else{
