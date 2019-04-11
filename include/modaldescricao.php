@@ -12,7 +12,7 @@
                 <div class="modal-body">
                     <p style="border: 1px solid lightgray;"><?php echo $quero['descricao']; ?></p>
                     <p>
-                        <strong>Solicitação:</strong> <?php echo $quero['problema']; ?>
+                        <strong>Solicitação:</strong> <?php echo $quero['desc_problema']; ?>
                         </br>
                         <strong>Usuário:</strong> <?php echo $quero['solicitacao']; ?>
                         </br>

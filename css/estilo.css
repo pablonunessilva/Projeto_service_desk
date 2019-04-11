@@ -21,20 +21,22 @@ nav {
     border-left: none !important;
     border-right: none !important;
     border-top: none !important;
-    background: black;
+    background:#0404B4;
     width: 100%;
     top: 0% !important;             
     position: fixed !important;
     z-index: 9999;
 }
-
+#modal-css{
+    margin-top:170px;
+}
 
 
 footer {
     
     text-align: center;
     border-top: 1px solid gray;
-    background: black;
+    background: #0404B4;
     width: 100%;
     color: white;
     bottom: 0%;
@@ -61,7 +63,7 @@ nav .container h3{
     color: white;
 }
 .navbar.navbar-default{
-    background: black;
+    background:#0404B4 ;
     padding: 5px;
     
 }
@@ -392,7 +394,7 @@ img.icoedit{
 
 /*-------------------------- Jequiti do andré ---------------------*/
 
-img.jequiti {
+/*img.jequiti {
     margin-top: 0px;
     margin-left: 0px;
     width: 100%;
@@ -408,4 +410,4 @@ img.jequiti {
     height: 100%;
     position:relative;
     z-index: 99999999;
-}
+}*/

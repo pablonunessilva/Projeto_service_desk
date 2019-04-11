@@ -1,7 +1,7 @@
 <?php include 'include/banco.php'; ?>
  <!-- MODAL ALTERAR 'STATUS' -->
-    <div class="modal fade" id="janela<?php echo "$idchamado"; ?>">
-        <div class="modal-dialog">
+    <div class="modal fade" id="janela<?php echo "$idchamado"; ?>" tabindex="-1">
+        <div class="modal-dialog ">
             <div class="modal-content text-center">
                 <div class="modal-header">
                     <button class="close" data-dismiss="modal">&times;</button>
@@ -34,8 +34,8 @@
             <div class="modal-content text-center">
                 <div class="modal-body">
                     <h3><strong>Tem certeza?</strong></h3>
-                    <input type="hidden" name="idchamado" value="<?php echo $idchamado; ?>"></input> 
-                    <input type="hidden" name="idusuario" value="<?php echo $id; ?>"></input>   
+                    <input type="hidden" name="idchamado" value="<?php echo $idchamado; ?>">
+                    <input type="hidden" name="idusuario" value="<?php echo $id; ?>">  
                     <button data-dismiss="modal" class="btn btn-default">Cancelar</button>
                     <button class="btn btn-primary">Sim, confirmo a efetuação.</button>
                 </div>
