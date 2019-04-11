@@ -1,7 +1,7 @@
 <?php 
     
     if(isset($_COOKIE['admin'])){
-        if($_GET['msg'] == "resolvido"){
+        if($_GET['msagen'] == "resolvido"){
             header("Location: support.php?msagen=up");
         }else if($_GET['msagen'] == "right"){
             header("Location:support.php?msagen=right");
