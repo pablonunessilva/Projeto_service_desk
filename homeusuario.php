@@ -1,5 +1,5 @@
 <?php 
-    
+    $down='';
     if(isset($_COOKIE['admin'])){
         if($_GET['msagen'] == "resolvido"){
             header("Location: support.php?msagen=up");
@@ -36,6 +36,8 @@
             echo "<script>alert('Problema relatado com Sucesso!');</script>";    
         }else if($msagen == "left"){
             echo "<script>alert('Senha alterada com sucesso! Obs: use esta senha para acessar a plataforma.');</script>";       
+        }else if($msagen == "success"){
+            echo "<script>alert('Resposta postada com sucesso!');</script>";       
         }
     }
 ?>

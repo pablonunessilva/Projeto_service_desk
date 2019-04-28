@@ -5,7 +5,7 @@
     $senha = htmlspecialchars($_POST['senha']);
     $senha = md5($senha);
 
-    $query = "select setor from usuario where login = '$login' and senha = '$senha' and dados_status = 'ativo' limit 1";
+    $query = "select setor, idusuario from usuario where login = '$login' and senha = '$senha' and dados_status = 'ativo' limit 1";
 	$cons = mysqli_query($con, $query);
 	$total = mysqli_num_rows($cons);
     
@@ -13,6 +13,7 @@
         $setor = $usuario['setor'];
     }
     if($total > 0){
+        setcookie('idusuario', $usuario['idusuario']);
         // esse helpdesk criei para ter a pagina do tecnico, felipe fez de um jeito que perdi a logica.
         if($setor == "administrativo"){
             setcookie ("admin", "$login", (time() + (24 * 3600)));

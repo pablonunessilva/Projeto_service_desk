@@ -13,8 +13,17 @@
         header("Location:hometech.php");
     }
 
+    //Mensagem de Sucesso 
+    if(isset($_GET['msagen'])){
+        $msagen = $_GET['msagen'];
+        if($msagen == "success"){
+            echo "<script>alert('Resposta postada com sucesso!');</script>";       
+        }
+    }
+
 // essa variavel serve para já começar com conteudo para não dar erro! 
     $status = "Pendente";
+    $id = isset($_COOKIE['idusuario']) ? $_COOKIE['idusuario'] : '';
 
     if(isset($_POST['selecionar'])){
         $selecionar = $_POST['selecionar'];
