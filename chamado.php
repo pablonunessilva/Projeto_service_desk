@@ -1,11 +1,10 @@
 <?php 
 // informações que o usuario passa atravez do homeusuario.php e support.php. 
 	include "include/banco.php";
-
 	$motivo = $_POST['motivo'];
 	$descricao = $_POST['descricao'];
     $idusuario = $_POST['idusuario'];
-    $prioridade=$_POST['prioridade'];
+    $prioridade = isset($_POST['prioridade']) ? $_POST['prioridade'] : 1;
 
 
 // informações do banco para juntar com as informações do usuario passadas aqui em cima, e colocar na tabela chamados.
@@ -20,8 +19,12 @@
     }
     
 	$query2 = "insert into chamados(idusuario, data, setorcall, solicitacao, descricao, id_problema, status,id_prioridade) values('$idusuario','$data','$setor','$nome','$descricao','$motivo','Pendente','$prioridade')";
-    mysqli_query($con, $query2);
-    header("Location:homeusuario.php?msagen=right");
+    $success = mysqli_query($con, $query2);
+    
+    if($success){
+        header("Location:homeusuario.php?msagen=right");
+    }
+    
     
 //quando o tecnico troca esse "pendente" para "Resolvido" deve se fazer o update no status.
  ?>

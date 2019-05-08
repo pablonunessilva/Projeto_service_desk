@@ -29,7 +29,7 @@
         }else if($msagen == "up"){
             echo "<script>alert('Obrigado pela confirmação!');</script>";   
         }
-    } 
+    }
     
  ?>
 <div class="clearbit2"></div>
