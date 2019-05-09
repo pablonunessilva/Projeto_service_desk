@@ -1,7 +1,7 @@
 <?php 
-    
+    $down='';
     if(isset($_COOKIE['admin'])){
-        if($_GET['msg'] == "resolvido"){
+        if($_GET['msagen'] == "resolvido"){
             header("Location: support.php?msagen=up");
         }else if($_GET['msagen'] == "right"){
             header("Location:support.php?msagen=right");
@@ -36,6 +36,8 @@
             echo "<script>alert('Problema relatado com Sucesso!');</script>";    
         }else if($msagen == "left"){
             echo "<script>alert('Senha alterada com sucesso! Obs: use esta senha para acessar a plataforma.');</script>";       
+        }else if($msagen == "success"){
+            echo "<script>alert('Resposta postada com sucesso!');</script>";
         }
     }
 ?>
@@ -118,22 +120,32 @@
                       
                 <form action="chamado.php" method="post" name="chamado" id="chamado" oninput="ajustes(this)" >
                     <div class="form-group text-center">
-                        <label for="numaquina">Código da Máquina:</label>
-                        <input class="form-control" type="text" id="numaquina" name="numaquina" placeholder="Digite o código do computador que está na etiqueta preso ao gabinete." onkeyup="salto(this.name,this.value)" onkeypress="masc_phone(this)" required>
+                        <label for="numaquina">Título do chamado:</label>
+                        <input class="form-control" type="text" id="numaquina" name="numaquina" placeholder="Digite um título do seu problema" onkeyup="salto(this.name,this.value)" onkeypress="masc_phone(this)" required>
                     </div>
                     
                 	<div class="form-group text-center">
-                    	<label for="motivo" >Problema:</label>
-                    		<select name="motivo" id="motivo" class="form-control" required>
-                    			<option value="">Selecione: </option>
-                    			<option value="mouse" >Mouse com defeito</option>
-                    			<option value="teclado" >Teclado com defeito </option>
-                    			<option value="impressora" >Impressora com defeito </option>
-                    			<option value="monitor">Monitor com defeito </option>
-                    			<option value="computador" >Computador não liga </option>
-                    			<option value="internet">Sem internet </option>
-                    			<option value="outro">Outro.. </option>
-                    		</select>
+                        <label for="motivo" >Problema:</label>
+                            <select name="motivo" id="motivo" class="form-control" required>
+                                <option value="">Selecione: </option>
+                                <option value="1" >Internet está muito lenta</option>
+                                <option value="2" >Não consigo abrir um site especifico</option>
+                                <option value="3" >Não abre nenhum site</option>
+                                <option value="4">Mudança de endereço</option>
+                                <option value="5" >Mudança do local da instalação </option>
+                                <option value="6">Outros</option>
+                            </select>
+                    </div>
+                    
+                    <div class="form-group text-center">
+                        <label for="classificacao">Prioridade</label>
+                        <select name="prioridade" id="prioridade" class="form-control" required>
+                            <option value="">Selecione</option>
+                            <option value="1">Critica</option>
+                            <option value="2">Alta</option>
+                            <option value="3">Média</option>
+                            <option value="4">Baixa</option>
+                        </select>
                     </div>
                 
                     <div  class="form-group text-center">

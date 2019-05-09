@@ -73,6 +73,8 @@ CREATE TABLE `prioridade` (
   `sla` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+
+
 --
 -- Extraindo dados da tabela `prioridade`
 --
@@ -84,6 +86,26 @@ INSERT INTO `prioridade` (`id`, `prioridade_desc`, `sla`) VALUES
 (4, 'Básico', 96);
 
 -- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `respostas`
+--
+
+CREATE table `respostas`(
+	  `id` int auto_increment not null,
+    `resposta` varchar(1000) not null,
+    `idusuario` int not null,
+    `idchamado` int not null,
+    `data` varchar(10),
+    `hora` varchar(8),
+    PRIMARY KEY (id),
+    FOREIGN KEY (idusuario) REFERENCES usuario(idusuario)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
+-- --------------------------------------------------------
+
 
 --
 -- Estrutura da tabela `tbl_problema`
