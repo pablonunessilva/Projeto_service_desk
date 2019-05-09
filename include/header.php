@@ -97,6 +97,9 @@
                                     <hr>
                                     <li><a href="pdf/ativo.php">Funcionários Ativos</a></li>
                                     <li><a href="pdf/desativo.php">Funcionários Desativos</a></li>
+                                    <hr>
+                                    <li><a href="">Importar XML</a></li>
+                                    <li><a href="">Exportar XML</a></li>
                         <?php } ?>
                                 </ul>
                             </li>

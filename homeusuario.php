@@ -128,11 +128,11 @@
                         <label for="motivo" >Problema:</label>
                             <select name="motivo" id="motivo" class="form-control" required>
                                 <option value="">Selecione: </option>
-                                <option value="1" >Internet está muito lenta</option>
-                                <option value="2" >Não consigo abrir um site especifico</option>
-                                <option value="3" >Não abre nenhum site</option>
+                                <option value="1" >Internet lenta/Sem conexão</option>
+                                <option value="2" >Não consigo abrir um site específico</option>
+                                <option value="3" >Não consigo navegar em nenhum site</option>
                                 <option value="4">Mudança de endereço</option>
-                                <option value="5" >Mudança do local da instalação </option>
+                                <option value="5" >Troca do roteador </option>
                                 <option value="6">Outros</option>
                             </select>
                     </div>
