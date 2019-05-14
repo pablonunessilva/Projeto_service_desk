@@ -4,7 +4,7 @@
             <div class='modal-content text-center'>
                 <div class='modal-header'> 
                     <button type='submit' class='close' href='usuarios.php'>&times;</button>
-                    <h4 class='modal-title'>Alterar dados de usuário: (<span style='color: red;'><?php echo '$login'; ?></span>)</h4>
+                    <h4 class='modal-title'>Alterar dados de usuário: <span style='color: red;'><?php echo $login; ?></span></h4>
                 </div>
                 
                 <form method='post' class='text-center' action='alterarsenha.php' enctype='multipart/form-data'>

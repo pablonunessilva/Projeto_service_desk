@@ -1,9 +1,9 @@
 <?php 
     $down='';
     if(isset($_COOKIE['admin'])){
-        if($_GET['msagen'] == "resolvido"){
+        if(isset($_GET['msagen']) == "resolvido"){
             header("Location: support.php?msagen=up");
-        }else if($_GET['msagen'] == "right"){
+        }else if(isset($_GET['msagen']) == "right"){
             header("Location:support.php?msagen=right");
         }
     }else if(empty($_COOKIE['usuario'])){
@@ -12,7 +12,7 @@
 
     include "include/banco.php";
 
-    $login = $_COOKIE['usuario'];
+    $login = isset($_COOKIE['usuario']) ? $_COOKIE['usuario'] : '';
     $query = "select idusuario, primeira_vez from usuario where login = '$login' limit 1";
     $consulta = mysqli_query($con, $query);
 

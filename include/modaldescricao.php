@@ -35,7 +35,6 @@
                                                 WHERE r.idchamado = '$idchamado'
                                                 ORDER BY r.id";
                             $respostas = mysqli_query($con, $query_respostas);
-
                         
                         ?>
                             <strong>Respostas Anteriores</strong>
