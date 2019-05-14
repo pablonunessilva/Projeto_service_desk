@@ -20,7 +20,7 @@
                                 <option readonly   disabled>Pendente</option>
                                 <option value="resolvido" required>Resolvido</option>
                             </select>
-                        </form>    
+                        </form> 
                         <p>
                         <?php
                             $query_respostas = "SELECT
