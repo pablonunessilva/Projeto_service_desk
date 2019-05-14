@@ -1,5 +1,6 @@
 <?php
     include "include/banco.php";
+
     $idusuario = $_POST['idusuario'];
     $idchamado = $_POST['idchamado'];
     $resposta = $_POST['resposta'];
@@ -18,4 +19,4 @@
     else{
       header("Location: home.php?msagen=success");
     }
-?> 
+?>

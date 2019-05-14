@@ -76,6 +76,21 @@ CREATE TABLE `prioridade` (
 
 
 --
+-- Estrutura da tabela `respostas`
+--
+
+use helpdesk2;
+CREATE table `respostas`(
+	  `id` int auto_increment not null,
+    `resposta` varchar(1000) not null,
+    `idusuario` int not null,
+    `data` varchar(10),
+    `hora` varchar(8),
+    PRIMARY KEY (id),
+    FOREIGN KEY (idusuario) REFERENCES usuario(idusuario)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
 -- Extraindo dados da tabela `prioridade`
 --
 

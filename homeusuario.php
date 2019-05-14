@@ -12,7 +12,7 @@
 
     include "include/banco.php";
 
-    $login = $_COOKIE['usuario'];
+    $login = isset($_COOKIE['usuario']) ? $_COOKIE['usuario'] : '';
     $query = "select idusuario, primeira_vez from usuario where login = '$login' limit 1";
     $consulta = mysqli_query($con, $query);
 
