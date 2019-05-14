@@ -6,11 +6,9 @@
     $idusuario = $_POST['idusuario'];
     $prioridade = isset($_POST['prioridade']) ? $_POST['prioridade'] : 1;
 
-
 // informações do banco para juntar com as informações do usuario passadas aqui em cima, e colocar na tabela chamados.
 	$query = "select setor, nome from usuario where idusuario = '$idusuario' limit 1";
 	$consulta = mysqli_query($con, $query);
-	
 	if($usuario = mysqli_fetch_assoc($consulta)){
         $setor = $usuario['setor'];
         $nome = $usuario['nome'];

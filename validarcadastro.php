@@ -19,6 +19,7 @@
 			header("Location:cadastro.php?erro=1");
 		} else {
 			$query2 = "insert into usuario(nome, email, login, senha, setor, datacadastro, dados_status, primeira_vez) values('$nome','$email','$login','$senha','$setor','$data','ativo','1')";
+			var_dump($query2);
 			mysqli_query($con, $query2);
 			header("Location:cadastro.php?ok=ok");
 		}
