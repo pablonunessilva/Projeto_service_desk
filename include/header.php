@@ -70,6 +70,7 @@
                 ?> 
                             <li><a class="ativo" href="home.php">Início</a></li>
                             <li><a href="support.php">Cadastrar Chamado</a></li>
+                            <li><a href="importar.php">Importar</a></li>
                             <li><a  href="cadastro.php">Cadastrar Usúario</a></li>
                             <!--begin to dropdown!-->
                             <li class="dropdown">
