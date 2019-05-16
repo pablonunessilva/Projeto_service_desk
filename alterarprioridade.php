@@ -5,7 +5,6 @@
     $prioridade = $_POST['prioridade'];
     
     $query = "update chamados set id_prioridade = '$prioridade' where idchamado = '$idchamado'";
-    var_dump($query);
     $insert = mysqli_query($con, $query);
     
     if($insert == true){
