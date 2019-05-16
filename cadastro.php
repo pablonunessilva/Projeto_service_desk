@@ -58,10 +58,8 @@
                         <label for="setor">Setor:</label>
                         <select name="setor" id="setor" class="form-control" required>
                                <option value="" readonly>Selecione:</option>
-                               <option value="helpdesk">Técnico Help Desk</option>
                                <option value="administrativo">Administrativo</option>
-                               <option value="admin_no_privilege">Administrativo(Sem Privilégios)</option>
-                               <option value="tecnicoInformatica">Tecnico Informática</option>
+                               <option value="tecnico">Técnico</option>
                                <option value="cliente">Cliente</option>
                         </select>
                     </div>
