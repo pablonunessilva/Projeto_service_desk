@@ -6,8 +6,7 @@
 	$html .= '<tr>';
 	$html .= '<th>Setor:</th>';
 	$html .= '<th>Solicitação:</th>';
-	$html .= '<th>Problema:</th>';
-	$html .= '<th>Nº da Maquina:</th>';
+	$html .= '<th>Descrição:</th>';
     $html .= '<th>Data de abertura do chamado:</th>';
     $html .= '<th>Data fechamento:</th>';
 	$html .= '<th>Status:</th>';
@@ -20,8 +19,7 @@
 	while($row_transacoes = mysqli_fetch_assoc($resultado_trasacoes)){
 		$html .= '<tr><td>'.$row_transacoes['setorcall'] . "</td>";
 		$html .= '<td>'.$row_transacoes['solicitacao'] . "</td>";
-		$html .= '<td>'.$row_transacoes['problema'] . "</td>";
-		$html .= '<td>'.$row_transacoes['numaquina'] . "</td>";
+		$html .= '<td>'.$row_transacoes['descricao'] . "</td>";
         $html .= '<td>'.$row_transacoes['data'] . "</td>";
         $html .= '<td>'.$row_transacoes['data_resolvido'] . "</td>";
 		$html .= '<td>'.$row_transacoes['status'] . "</td></tr>";		
