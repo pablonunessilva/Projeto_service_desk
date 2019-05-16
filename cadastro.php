@@ -26,7 +26,7 @@
         <form  action="validarcadastro.php" method="post" >
             <div class="usuarios container">
                 <div class="row">
-                    <h3>Cadastro de Funcionário</h3>
+                    <h3>Cadastro de Usuário</h3>
                     <span style="color:blue; display: flex; justify-content: center;"><strong><?php echo $msg2; ?></strong></span>
                     <span style="color: red; display: flex; justify-content: center;"><?php echo $msg; ?></span>
                     <div class="form-group">
