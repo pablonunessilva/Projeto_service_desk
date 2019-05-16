@@ -47,7 +47,9 @@
 	<section >
         <div onload="abrir" class="container <?php echo "$down"; ?> down ">
             <div class="col-xs-12 col-md-12">
-                <h3 class="ajust">Abrir chamado</h3>
+                <br>
+                <h3 class="ajust">Listar chamado(s)</h3>
+                <br>
                 <?php
                     if($total != 0){
                         echo "<div class='table-responsive'>";
@@ -121,6 +123,9 @@
                     <hr>  
                       
                 <form action="chamado.php" method="post" name="chamado" id="chamado" oninput="ajustes(this)" >
+                <br>
+                <h3 class="ajust">Abrir chamado</h3>
+                <br>
                     <div class="form-group text-center">
                         <label for="numaquina">Título do chamado:</label>
                         <input class="form-control" type="text" id="numaquina" name="numaquina" placeholder="Digite um título do seu problema" onkeyup="salto(this.name,this.value)" onkeypress="masc_phone(this)" required>
