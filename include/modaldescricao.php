@@ -19,6 +19,27 @@
                         <strong>Setor:</strong> <?php echo $quero['setorcall']; ?>
                         </br>
                         <strong>Status:</strong> <?php echo "<span style='color: red;'>".$quero['status']."</span>"; ?>
+                        <?php if($_COOKIE['setor'] != 'cliente'){
+                        ?>
+                            <form method="post" action="alterarprioridade.php">
+                                <div class="form-group">
+                                    <label for="classificacao">Alterar Prioridade</label>
+                                    <select name="prioridade" id="prioridade" class="form-control" required>
+                                        <option value="">Selecione</option>
+                                        <option value="1">Critica</option>
+                                        <option value="2">Alta</option>
+                                        <option value="3">Média</option>
+                                        <option value="4">Baixa</option>
+                                    </select>
+                                    <input type="hidden" name="idchamado" value="<?php echo $idchamado; ?>">
+                                    <input type="hidden" name="modal" value="admin">
+                                </div>
+                                <button type="submit" style="border: 2px solid black;" class="btn btn-primary">Alterar</button>
+                            </form>
+                    
+                    
+                        <?php } ?>
+                        
                         </br>
                         <strong>DATA:</strong> <?php echo $quero['data']; ?>
                         </p>
