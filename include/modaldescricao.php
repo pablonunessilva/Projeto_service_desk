@@ -6,7 +6,15 @@
                     <button class="close" data-dismiss="modal">&times;</button>
                     <h4 class="modal-title">DESCRIÇÃO - CHAMADO<br/>
                         <span style="color: red;"><?php echo $quero['solicitacao']; ?></span>:
-                    </h4>  
+                    </h4>
+                    <?php if($_COOKIE['setor'] != 'cliente'){ ?>
+                    <form method="post" action="alterarresolvido.php">
+                        <input type="hidden" name="idchamado" value="<?php echo $idchamado; ?>">
+                        <div align = "right">
+                            <button type="submit" style="border: 2px solid black;" class="btn btn-info">Finalizar chamado</button>
+                        </div>
+                    </form>
+                    <?php } ?>
                 </div>
             
                 <div class="modal-body">
@@ -91,7 +99,7 @@
                 </div>
                 
                 <div class="modal-footer">
-                    <button style="border: 2px solid black;" class="btn btn-primary" data-dismiss="modal">Fechar</button>  
+                    <button style="border: 2px solid black;" class="btn btn-danger" data-dismiss="modal">Fechar</button>  
                 </div>
                 
             </div>
