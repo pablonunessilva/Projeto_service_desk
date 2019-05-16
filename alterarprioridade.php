@@ -9,9 +9,9 @@
     $insert = mysqli_query($con, $query);
     
     if($insert == true){
-       header("Location: homeusuario.php?msagen=left");
+       header("Location: homeusuario.php?msagen=success");
     }else{
-        var_dump($insert);
+        header("Location: homeusuario.php?msagen=ERRO" .mysqli_error($con));
     }
     
 ?>
