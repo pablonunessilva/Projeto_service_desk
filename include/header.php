@@ -58,10 +58,8 @@
                     <?php } 
                 }
                     
-                if (isset($_COOKIE['usuario'])) {
                 ?>
-                    <li class="user"><a  style="cursor: default;">User</a></li>
-                <?php } ?>
+
                         <!-- Exibe links de Inicio, Cadastrar, Usuarios, etc.. 'Apenas para o administrador' -->
                 
                 <?php 
