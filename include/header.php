@@ -70,7 +70,6 @@
                 ?> 
                             <li><a class="ativo" href="home.php">Início</a></li>
                             <li><a href="support.php">Cadastrar Chamado</a></li>
-                            <li><a href="importar.php">Importar</a></li>
                             <li><a  href="cadastro.php">Cadastrar Usúario</a></li>
                             <!--begin to dropdown!-->
                             <li class="dropdown">
@@ -99,8 +98,8 @@
                                     <li><a href="pdf/ativo.php">Funcionários Ativos</a></li>
                                     <li><a href="pdf/desativo.php">Funcionários Desativos</a></li>
                                     <hr>
-                                    <li><a href="">Importar XML</a></li>
-                                    <li><a href="">Exportar XML</a></li>
+                                    <li><a href="importar.php">Importar XML</a></li>
+                                    <li><a href="exportarxml.php">Exportar XML</a></li>
                         <?php } ?>
                                 </ul>
                             </li>

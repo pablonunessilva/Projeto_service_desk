@@ -9,19 +9,21 @@
     }else if(empty($_COOKIE['usuario'])){
         header("Location:index.php");
     }
-
     include "include/banco.php";
 
     $login = isset($_COOKIE['usuario']) ? $_COOKIE['usuario'] : '';
-    $query = "select idusuario, primeira_vez from usuario where login = '$login' limit 1";
+    $query = "select idusuario, setor, primeira_vez from usuario where login = '$login' limit 1";
     $consulta = mysqli_query($con, $query);
-
     if($usuario = mysqli_fetch_assoc($consulta)){
         $id = $usuario['idusuario'];
         $vez = $usuario['primeira_vez'];
     }
-
-    $query2 = "select A.idchamado, A.data, A.setorcall, A.solicitacao, A.descricao, B.desc_problema, A.status,C.prioridade_desc,C.sla from chamados as A  LEFT JOIN tbl_problema as B ON A.id_problema = B.id_problema LEFT JOIN prioridade as C ON A.id_prioridade =C.id where idusuario = '$id'";
+    if($usuario['setor'] == 'cliente'){
+        $query2 = "select A.idchamado, A.data, A.setorcall, A.solicitacao, A.descricao, B.desc_problema, A.status,C.prioridade_desc,C.sla from chamados as A  LEFT JOIN tbl_problema as B ON A.id_problema = B.id_problema LEFT JOIN prioridade as C ON A.id_prioridade =C.id where idusuario = '$id'";
+    }else{
+        $query2 = "select A.idchamado, A.data, A.setorcall, A.solicitacao, A.descricao, B.desc_problema, A.status,C.prioridade_desc,C.sla from chamados as A  LEFT JOIN tbl_problema as B ON A.id_problema = B.id_problema LEFT JOIN prioridade as C ON A.id_prioridade =C.id order by A.data DESC";
+ 
+    }
     $cons = mysqli_query($con, $query2);
     $total = mysqli_num_rows($cons);
     
