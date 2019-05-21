@@ -10,6 +10,11 @@
                     <?php if($_COOKIE['setor'] != 'cliente'){ ?>
                     <form method="post" action="alterarresolvido.php">
                         <input type="hidden" name="idchamado" value="<?php echo $idchamado; ?>">
+                        <a href="exportarchamado.php?idchamado=<?php echo $idchamado; ?>">
+                            <button type="button" class="btn btn-warning btn-sm"style="border: 2px solid black;" >
+                                <span class="glyphicon glyphicon-export" aria-hidden="true"></span> Exportar
+                            </button>
+                        </a>
                         <div align = "right">
                             <button type="submit" style="border: 2px solid black;" class="btn btn-info">Finalizar chamado</button>
                         </div>
